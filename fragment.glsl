@@ -26,8 +26,8 @@ void main()
 		if (i > pre) mean += length(z);
 		if (dot(z,z) > escape && i > pre) break;
 	}
-	mean/=float(i-1);
-	float ci =  1.0 - log2(.5*log2(mean*C));
+	mean/=float(i-pre);
+	float ci =  float(i) + 1.0 - log2(.5*log2(mean*C));
 	gl_FragColor = vec4(0.5+0.5*cos(6.0*ci),
 	                    0.5+0.5*cos(6.0*ci+0.4),
 	                    0.5+0.5*cos(6.0*ci+0.87931), 1.0);

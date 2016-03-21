@@ -74,9 +74,9 @@ static void mousepos_callback(GLFWwindow *window, double x, double y)
 vec2 c = {-0.737253,4.298468};
 vec2 p = {-3.119276,0.0};
 float zoom = 0.554781;
-float escape = 4.0;
+float escape = 2.0;
 int iterations = 152;
-int pre = 1;
+int pre = 0;
 float C = 0.98136;
 
 vec2 vc = {0}, vp = {0};
@@ -173,12 +173,12 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 			break;
 		case GLFW_KEY_1: iterations += 1; break;
 		case GLFW_KEY_Q: iterations -= 1; break;
-		case GLFW_KEY_3: escape *= 1.0/0.94; break;
-		case GLFW_KEY_E: escape *= 0.94; break;
+		case GLFW_KEY_3: escape *= 1.0/0.97; break;
+		case GLFW_KEY_E: escape *= 0.97; break;
 		case GLFW_KEY_4: pre += 1; break;
 		case GLFW_KEY_R: pre -= 1; break;
 		case GLFW_KEY_5: C *= (1-1e-2); break;
-		case GLFW_KEY_T: C /= (1-1e-2); break;
+		case GLFW_KEY_T: C *= 1.0/(1-1e-2); break;
 		}
 	redraw = true;
 	mod_shift = mods & GLFW_MOD_SHIFT ? 0.1 : 1.0;

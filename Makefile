@@ -1,7 +1,7 @@
 RM	= rm -f
 CC	= clang
 CFLAGS	= -Wall -O2 -std=c11 -I./deps
-LDFLAGS	= -lm -lglfw -lGL
+LDFLAGS	= -lm -lGL -lSDL2
 
 SOURCES	= \
 	main.c \
